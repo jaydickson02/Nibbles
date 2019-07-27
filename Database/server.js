@@ -44,11 +44,11 @@ app.get('/api/answers/:id', (req, res) => {
 })
 
 app.get('/api/answers/all', (req, res) => {
-    answerModel.find({}, (err, answer) => {
-        if(err) {return (res.send('Error occurred'))}
+    reviewModel.find({}, (err, answers) => {
+        if(err) {return (res.send('Error occurred (Code: 1)' + err))}
 
-        res.json(answer)
-    })
+        res.json(answers)
+    })  
 
 })
 
