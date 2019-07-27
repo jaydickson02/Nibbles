@@ -44,7 +44,7 @@ app.get('/api/answers/id/:id', (req, res) => {
 })
 
 app.get('/api/answers/all', (req, res) => {
-    reviewModel.find({}, (err, answers) => {
+    answerModel.find({}, (err, answers) => {
         if(err) {return (res.send('Error occurred (Code: 1)' + err))}
 
         res.json(answers)
