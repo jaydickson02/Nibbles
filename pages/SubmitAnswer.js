@@ -61,14 +61,7 @@ let submitAnswer = () => {
                 name="author"
                 fullWidth
               />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                label="Ranking"
-                name="ranking"
-                type="number"
-                fullWidth
-              />
+
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -85,6 +78,13 @@ let submitAnswer = () => {
               >
               Submit
               </Button>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                name="ranking"
+                type="hidden"
+                fullWidth
+              />
             </form>
           </div>
         </Container>
