@@ -43,6 +43,15 @@ app.get('/api/answers/:id', (req, res) => {
 
 })
 
+app.get('/api/answers/all', (req, res) => {
+    answerModel.find({}, (err, answer) => {
+        if(err) {return (res.send('Error occurred'))}
+
+        res.json(answer)
+    })
+
+})
+
 
 app.post('/api/answer/add', (req, res) => { 
     let answer = new answerModel( //Add statements to confirm all fields are saturated
@@ -51,7 +60,7 @@ app.post('/api/answer/add', (req, res) => {
             content: req.body.content,
             title: req.body.title,
             ranking: req.body.ranking,
-            catagory: req.body.catagory,
+            category: req.body.category,
             iD: answerId
         }
     )
