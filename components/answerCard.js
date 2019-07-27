@@ -10,7 +10,8 @@ import Divider from '@material-ui/core/Divider';
 import Avatar from '@material-ui/core/Avatar';
 import { deepOrange, deepPurple } from '@material-ui/core/colors';
 import SimpleBar from './smallSimpleBar';
-
+import RefrenceDrawer from './refrenceDrawer';
+import NoSsr from '@material-ui/core/NoSsr';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -59,13 +60,13 @@ const useStyles = makeStyles(theme => ({
         <Typography variant="h7">
             - {props.info.author}
         </Typography>
-        
+
     </div>
 
-   
-        
-
-
+    <div style={{height:"42px"}}></div>
+    <NoSsr>
+    <RefrenceDrawer />
+    </NoSsr>
         </CardContent>
     </Card>
   );
