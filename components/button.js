@@ -10,13 +10,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TextButtons() {
+export default function TextButtons(props) {
   const classes = useStyles();
 
   return (
     <div>
-      <Button href="/" className={classes.button}>
-        Nibbles
+      <Button style={{width: "100%"}} variant="contained" color="primary" className={classes.button}>
+        {props.content}
       </Button>
     </div>
   );

@@ -10,7 +10,7 @@ const useStyles = makeStyles({
   card: {
     minWidth: 275,
   },
-  
+
   title: {
     fontSize: 14,
   },
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   const classes = useStyles();
     
   return (
-    <Card className={classes.card}>
+    <Card style={{height: '40vw'}} className={classes.card}>
       <CardContent>
         <Typography variant="h5" component="h2">
           {props.info.title}

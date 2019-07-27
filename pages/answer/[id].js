@@ -6,6 +6,8 @@ import {useRouter} from 'next/router';
 //Import Components
 import AnswerCard from "../../components/answerCard";
 import AppBar from "../../components/appBar";
+import Categorys from '../../components/category';
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -46,15 +48,17 @@ let answerPage = (props) => {
         <Grid container spacing={4}>
 
             <Grid item xs={12}>
-            <AppBar />
+              <AppBar />
             </Grid>
 
             <Grid item xs={8}>
-            
-          <AnswerCard info={answer}/>
-          </Grid>
+              <AnswerCard info={answer}/>
+            </Grid>
 
-        
+            <Grid item xs={4}>
+              <Categorys />
+            </Grid>
+           
         </Grid>
     </div>
     )
