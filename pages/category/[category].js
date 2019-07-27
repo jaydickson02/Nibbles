@@ -18,10 +18,31 @@ const useStyles = makeStyles(theme => ({
     },
   }));  
 
-let categoryPage = () => {
+
+let GenerateAnswers = (props) => (
+
+  props.answers.map(answer => 
+    <Grid item xs={4}>
+        <AnswerSummaryCard info={answer}/>
+    </Grid>
+  )
+  
+)
+
+let categoryPage = (props) => {
 
     const classes = useStyles();
     let router = useRouter();
+
+    let answerArray = [];
+
+    for(let i = 0; i < props.answers.length; i++){
+
+      if(router.query.category == props.answer[i].category){
+        answerArray.push(props.answer[i]);
+      }
+
+    }
 
     return(
         <div className={classes.root}>
@@ -31,17 +52,20 @@ let categoryPage = () => {
             <AppBar />
             </Grid>
 
-            <Grid item xs={8}>
-            
-          <AnswerCard info={answer}/>
-          </Grid>
+            <GenerateAnswers answers={answerArray}/>
 
-          <Grid item xs={4}>
-          <AnswerCard info={answer}/>
-          </Grid>
         </Grid>
     </div>
     )
+
+}
+
+categoryPage.getInitialProps = async () => {
+  const res = await fetch('http://68.183.183.193/api/answers/all');
+  const data = await res.json();
+    
+
+  return {answers: data}
 
 }
 
