@@ -24,11 +24,16 @@ let answerPage = (props) => {
     const classes = useStyles();
     let router = useRouter();
     
-    for(let i = 0; i < props.answers; i++){
-        console.log('hey');
-    }
 
     console.log(props.answers);
+
+    for(let i = 0; i < props.answers; i++){
+
+      if(props.answers[i].id == router.query.id){
+        answer = props.answers[i];
+      }
+
+    }
 
     return(
         <div className={classes.root}>
@@ -39,7 +44,7 @@ let answerPage = (props) => {
             </Grid>
 
             <Grid item xs={8}>
-          <AnswerCard />
+          <AnswerCard info={answer}/>
           </Grid>
 
           <Grid item xs={4}>
@@ -48,17 +53,17 @@ let answerPage = (props) => {
         </Grid>
     </div>
     )
-
 }
 
-answerPage.getInitalProps = async () => {
-    const res = await fetch('http://68.183.183.193/api/answers/all');
-    const data = await res.json();
+answerPage.getInitialProps = async () => {
+  const res = await fetch('http://68.183.183.193/api/answers/all');
+  const data = await res.json();
     
 
-    return {answers: data}
+  return {answers: data}
 
 }
+
 
 
 export default answerPage;
