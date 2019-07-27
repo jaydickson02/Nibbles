@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 //}));
 
 
-let CategoryCard = () => {
+let CategoryCard = (props) => {
 
   //const classes = useStyles();
 
@@ -20,10 +20,10 @@ let CategoryCard = () => {
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5">
-              Physics
+              {props.title}
             </Typography>
             <Typography variant="body2" color="textSecondary">
-              The study of relativity and quantum mechanics and other bullshit
+              {props.content}
             </Typography>
           </CardContent>
         </CardActionArea>
