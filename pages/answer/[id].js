@@ -54,9 +54,7 @@ let answerPage = (props) => {
           <AnswerCard info={answer}/>
           </Grid>
 
-          <Grid item xs={4}>
-          <Categorys />
-          </Grid>
+        
         </Grid>
     </div>
     )

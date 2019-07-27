@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import {useRouter} from 'next/router';
 
 //Import Components
-import AnswerCard from "../../components/answerCard";
+import AnswerSummaryCard from "../../components/answerSummaryCard";
 import AppBar from "../../components/appBar";
 
 const useStyles = makeStyles(theme => ({
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 let GenerateAnswers = (props) => (
 
   props.answers.map(answer => 
-    <Grid item xs={4}>
+    <Grid key={answer.title} item xs={4}>
         <AnswerSummaryCard info={answer}/>
     </Grid>
   )
@@ -38,8 +38,8 @@ let categoryPage = (props) => {
 
     for(let i = 0; i < props.answers.length; i++){
 
-      if(router.query.category == props.answer[i].category){
-        answerArray.push(props.answer[i]);
+      if(router.query.category == props.answers[i].category){
+        answerArray.push(props.answers[i]);
       }
 
     }
