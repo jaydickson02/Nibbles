@@ -10,11 +10,7 @@ const useStyles = makeStyles({
   card: {
     minWidth: 275,
   },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
+  
   title: {
     fontSize: 14,
   },
@@ -23,31 +19,21 @@ const useStyles = makeStyles({
   },
 });
 
- let answerCard = () => {
+ let answerCard = (props) => {
 
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
+    
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
         <Typography variant="h5" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
+          {props.info.title}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+        {props.info.content}
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+        {props.info.author}
         </Typography>
       </CardContent>
       <CardActions>

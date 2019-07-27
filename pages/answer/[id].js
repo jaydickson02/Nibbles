@@ -24,16 +24,22 @@ let answerPage = (props) => {
     const classes = useStyles();
     let router = useRouter();
     
+    //console.log(props.answers[0]._id);
 
-    console.log(props.answers);
+    //console.log(router.query.id);
 
-    for(let i = 0; i < props.answers; i++){
+    let answer;
 
-      if(props.answers[i].id == router.query.id){
-        answer = props.answers[i];
+    for(let i = 0; i < props.answers.length; i++){
+
+      if(props.answers[i]._id == router.query.id){
+         answer = props.answers[i];
+         
       }
 
     }
+
+    //console.log(answer);
 
     return(
         <div className={classes.root}>
@@ -44,11 +50,12 @@ let answerPage = (props) => {
             </Grid>
 
             <Grid item xs={8}>
+            
           <AnswerCard info={answer}/>
           </Grid>
 
           <Grid item xs={4}>
-          <AnswerCard />
+          <AnswerCard info={answer}/>
           </Grid>
         </Grid>
     </div>
