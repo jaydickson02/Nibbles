@@ -17,13 +17,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const categorieDict = [
-                        ["Physics", "Whatever the fuck"],
-                        ["Chemistry", "Blowing up nerds"],
                         ["Biology", "Death by Snoo Snoo"],
+                        ["Physics", "Moons, Rockets, Space, etc"],
+                        ["Chemistry", "Blowing up nerds"],
                         ["Psychology", "My brain after a hackathon"],
                         ["Computer Science", "Why do you bind functions in React"],
-                        ["Geology", "Rocks"],
                         ["Mathmatics", "What plus what is what now"],
+                        ["Geology", "Rocks"],
                         ["Literature", "Ink on dead trees"],
                         ["Art", "Picaso, Van Gough, DeVinci, Monet"],
                         ["History", "Are the royal family really just werewolves"]
