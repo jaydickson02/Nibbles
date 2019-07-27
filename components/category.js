@@ -1,3 +1,4 @@
+import NoSsr from '@material-ui/core/NoSsr';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -15,6 +16,7 @@ export default function PaperSheet() {
   const classes = useStyles();
 
   return (
+      <NoSsr>
     <div>
       <Paper style={{height:'36.6vw'}} className={classes.root}>
 
@@ -39,5 +41,6 @@ export default function PaperSheet() {
         <Button content={'History'} />
       </Paper>
     </div>
+    </NoSsr>
   );
 }
