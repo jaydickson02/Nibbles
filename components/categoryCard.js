@@ -16,7 +16,7 @@ let CategoryCard = (props) => {
 
   return(
     <div>
-      <Card>
+      <Card onClick={event => {window.location.href = "/category/" + props.title}}>
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5">
