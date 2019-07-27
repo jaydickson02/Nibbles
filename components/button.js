@@ -15,7 +15,7 @@ export default function TextButtons(props) {
 
   return (
     <div>
-      <Button style={{width: "100%"}} variant="contained" color="primary" className={classes.button}>
+      <Button style={{width: "100%"}} href={'/category/' + props.content} variant="contained" color="primary" className={classes.button}>
         {props.content}
       </Button>
     </div>

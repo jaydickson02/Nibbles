@@ -2,10 +2,13 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import fetch from 'isomorphic-unfetch';
 import {useRouter} from 'next/router';
+import NoSsr from '@material-ui/core/NoSsr';
 
 //Import Components
 import AnswerSummaryCard from "../../components/answerSummaryCard";
 import AppBar from "../../components/appBar";
+import BreadCrumbs from "../../components/breadcrumb";
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -45,16 +48,24 @@ let categoryPage = (props) => {
     }
 
     return(
+      
         <div className={classes.root}>
+          
         <Grid container spacing={4}>
 
             <Grid item xs={12}>
-            <AppBar />
+              <AppBar />
             </Grid>
 
-            <GenerateAnswers answers={answerArray}/>
+            <Grid item xs={10}>
+              <NoSsr>
+                <BreadCrumbs title={router.query.category}/>
+              </NoSsr>
+            </Grid>
 
-        </Grid>
+              <GenerateAnswers answers={answerArray}/>
+
+            </Grid>
     </div>
     )
 

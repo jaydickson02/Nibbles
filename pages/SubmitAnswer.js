@@ -85,6 +85,14 @@ let submitAnswer = () => {
               >
               Submit
               </Button>
+
+              <TextField
+                type="hidden"
+                margin="normal"
+                name="views"
+                value="0"
+              />
+
             </form>
           </div>
         </Container>

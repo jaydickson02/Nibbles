@@ -8,7 +8,8 @@ const answerSchema = new Schema({
     author: String,
     ranking: String,
     title: String,
-    category: String
+    category: String,
+    views: String
 })
 
 module.exports =  mongoose.model('answers', answerSchema);

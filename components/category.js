@@ -20,13 +20,13 @@ export default function PaperSheet() {
     <div>
       <Paper style={{height:'36.6vw'}} className={classes.root}>
 
-        <Button content={'Physics'} />
+        <Button content={'Physics'}/>
 
         <Button content={'Biology'} />
 
         <Button content={'Psychology'} />
 
-        <Button content={'Maths'} />
+        <Button content={'Mathmatics'} />
 
         <Button content={'Chemistry'} />
 
