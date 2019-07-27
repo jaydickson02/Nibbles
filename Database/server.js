@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let answerModel = require('./models/answerModel');
 
-app.get('/api/answers/:category', (req, res) => {
+app.get('/api/answers/catagory/:category', (req, res) => {
     answerModel.find({category: req.params.category}, (err, answers) => {
         if(err) {return (res.send('Error occurred'))}
 
@@ -34,7 +34,7 @@ app.get('/api/answers/:category', (req, res) => {
 })
 
 
-app.get('/api/answers/:id', (req, res) => {
+app.get('/api/answers/id/:id', (req, res) => {
     answerModel.find({iD: req.params.id}, (err, answer) => {
         if(err) {return (res.send('Error occurred'))}
 
