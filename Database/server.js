@@ -61,7 +61,7 @@ app.post('/api/answer/add', (req, res) => {
             title: req.body.title,
             ranking: req.body.ranking,
             category: req.body.category,
-            iD: answerId
+            iD: req.body.answerId
         }
     )
 

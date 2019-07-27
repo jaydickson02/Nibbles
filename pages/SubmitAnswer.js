@@ -2,7 +2,7 @@
 let submitAnswer = () => (
 
 
-<form method="post" action="/api/answer/add">
+<form method="post" action="http://68.183.183.193/api/answer/add">
         <label>Question:</label>
         <input type="text" name="title"></input>
         <label>Content:</label>
@@ -13,6 +13,7 @@ let submitAnswer = () => (
         <input type="text" name="ranking"></input>
         <label>Category:</label>
         <input type="text" name="category"></input>
+        
         <input type="hidden" name="answerId" value="123456789"></input>
         <input type="submit"></input>
 </form>
