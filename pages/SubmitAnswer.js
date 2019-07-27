@@ -13,8 +13,8 @@ let submitAnswer = () => (
         <input type="text" name="ranking"></input>
         <label>Category:</label>
         <input type="text" name="category"></input>
-        
-        <input type="hidden" name="answerId" value="123456789"></input>
+        <label>id:</label>
+        <input type="text" name="answerId"></input>
         <input type="submit"></input>
 </form>
 

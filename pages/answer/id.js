@@ -1,10 +1,11 @@
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import fetch from 'isomorphic-unfetch';
+import {useRouter} from 'next/router';
 
 //Import Components
-import AnswerCard from "../components/answerCard";
-import AppBar from "../components/appBar";
+import AnswerCard from "../../components/answerCard";
+import AppBar from "../../components/appBar";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -18,9 +19,16 @@ const useStyles = makeStyles(theme => ({
   }));
   
 
-let answerPage = () => {
+let answerPage = (props) => {
 
     const classes = useStyles();
+    let router = useRouter();
+    
+    for(let i = 0; i < props.answers; i++){
+        console.log('hey');
+    }
+
+    console.log(props.answers);
 
     return(
         <div className={classes.root}>
