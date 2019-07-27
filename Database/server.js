@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 //Work out what this is doing!
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 80
 const dev = process.env.NODE_DEV !== 'production' //true false
 
 
